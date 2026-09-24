@@ -1,0 +1,31 @@
+# 真实配置 —— 文档里的示例全是占位值（xxx.com / yourpass / 换成你的真实token）
+# 照着示例改成真值后生成的版本，不要提交
+*-real.yaml
+*.local.yaml
+secret.yaml
+secrets.yaml
+secret-*.yaml
+
+# 环境变量
+.env
+.env.*
+
+# 证书和密钥
+*.key
+*.pem
+*.crt
+*.p12
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+*~
+
+# 系统
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# docsify 本地预览
+node_modules/

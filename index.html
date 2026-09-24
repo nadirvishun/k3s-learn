@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>K3s 使用手册</title>
+  <meta name="description" content="单机 K3s 从安装到实战：kubectl 命令、Docker Compose 迁移、Traefik 路由、PVC 存储、静态站点。">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@5/dist/themes/core.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@5/dist/themes/addons/vue.min.css">
+
+  <!-- Prism 语法高亮主题：必须放在 docsify 主题之后 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prism-themes@1/themes/prism-one-light.min.css">
+  <link rel="stylesheet" media="(prefers-color-scheme: dark)"
+        href="https://cdn.jsdelivr.net/npm/prism-themes@1/themes/prism-one-dark.min.css">
+
+  <style>
+    :root {
+      /* 内容区默认 72ch（约 600px），中文一个字占 2ch，读起来太窄。
+         想更宽可以继续加大，想更窄就改小。 */
+      --content-max-width: 1100px;
+
+      /* docsify 主题默认会覆盖 Prism 主题的这三项，unset 后交给 Prism 主题决定，
+         代码块的字体和圆角就跟官方文档一致了 */
+      --border-radius: unset;
+      --font-family-mono: unset;
+      --font-size-mono: unset;
+    }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script>
+    window.$docsify = {
+      name: 'K3s 使用手册',
+      homepage: 'README.md',
+      routerMode: 'history',
+	  alias: {
+		'/.*/_sidebar.md': '/_sidebar.md',
+		'/.*/_navbar.md': '/_navbar.md',
+	  },
+      // 侧边栏：读取 _sidebar.md，并把文档内的二级标题也列出来
+      loadSidebar: true,
+      subMaxLevel: 2,
+
+      // 正文最多渲染到 4 级标题
+      maxLevel: 4,
+
+      // 切换页面后自动回到顶部
+      auto2top: true,
+
+      // 代码块右上角的复制按钮
+      copyCode: {
+        buttonText: '复制',
+        successText: '已复制',
+        errorText: '复制失败'
+      },
+
+      // 搜索框
+      search: {
+        placeholder: '搜索文档…',
+        noData: '没有找到结果',
+        depth: 3
+      },
+
+      // 每页底部的上一篇 / 下一篇
+      pagination: {
+        previousText: '上一篇',
+        nextText: '下一篇',
+        crossChapter: true,
+        crossChapterText: true
+      }
+    }
+  </script>
+
+  <!-- docsify 核心 -->
+  <script src="https://cdn.jsdelivr.net/npm/docsify@5/dist/docsify.min.js"></script>
+
+  <!-- 插件 -->
+  <script src="https://cdn.jsdelivr.net/npm/docsify@5/dist/plugins/search.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify@5/dist/plugins/zoom-image.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify-pagination@2/dist/docsify-pagination.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify-copy-code@3/dist/docsify-copy-code.min.js"></script>
+
+  <!-- Prism 语言包：docsify 只内置 markup / css / clike / javascript，
+       其余语言必须在这里补，且要放在 docsify 之后 -->
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-yaml.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-json.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-nginx.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-docker.min.js"></script>
+</body>
+</html>
