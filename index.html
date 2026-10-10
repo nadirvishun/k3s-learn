@@ -34,7 +34,8 @@
     window.$docsify = {
       name: 'K3s 使用手册',
       homepage: 'README.md',
-      routerMode: 'history',
+      // 适配GitHub Pages
+      routerMode: 'hash',
 	  alias: {
 		'/.*/_sidebar.md': '/_sidebar.md',
 		'/.*/_navbar.md': '/_navbar.md',
